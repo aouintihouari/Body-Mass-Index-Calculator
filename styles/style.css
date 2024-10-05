@@ -1,0 +1,617 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100rem;
+}
+/** Header **/
+.container .header {
+  margin-left: 2rem;
+  padding: 4rem;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.container .header .header-bg {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: var(--c-gradient);
+  width: 60vw;
+  height: 40rem;
+  border-bottom-right-radius: 1.5rem;
+}
+
+/** Header presentation **/
+.header .header-infos .header-logo {
+  margin-bottom: 3rem;
+}
+
+.header .header-infos .header-title {
+  font-size: var(--h-xl);
+  font-weight: var(--h-semi);
+  color: var(--c-d-blue);
+  width: 55%;
+  margin-bottom: 3rem;
+}
+
+.header .header-infos .header-description {
+  color: var(--c-gray);
+  font-size: var(--b-m);
+  font-weight: var(--b-reg);
+  line-height: var(--b-l-h);
+  width: 70%;
+}
+/** Header presentation **/
+
+/** Calculator **/
+.container .header .calculator {
+  display: flex;
+  flex-direction: column;
+  margin-left: -5vw;
+  margin-top: 4rem;
+  padding: 1.5rem;
+  background-color: var(--c-white);
+  box-shadow: 0px 10px 22px 0px rgba(0, 0, 0, 0.1);
+  width: 38rem;
+  height: auto;
+  border-radius: 1.5rem;
+}
+
+.calculator .calculator-header .calculator-title {
+  font-size: var(--h-m);
+  font-weight: var(--h-semi);
+  color: var(--c-d-blue);
+}
+
+.header .calculator .radio-btn-container {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.calculator .radio-btn-container .radio-btn-box {
+  display: flex;
+}
+
+.radio-btn-container .radio-btn-box .radio-btn {
+  cursor: pointer;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.radio-btn-container .radio-btn-box .radio-label {
+  color: var(--c-d-blue);
+  font-weight: var(--h-semi);
+  cursor: pointer;
+}
+
+.radio-btn-container .radio-btn-box .metric-label {
+  margin-right: 12rem;
+}
+
+.header .calculator .height-weight-input-container {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1rem;
+}
+
+.height-weight-input-container .height-container .imperial-height-container,
+.height-weight-input-container .weight-container .imperial-weight-container {
+  display: none;
+}
+
+.height-container .metric-height-container .centimeter-input,
+.height-container .imperial-height-container .feet-input,
+.height-container .imperial-height-container .inch-input,
+.weight-container .metric-weight-container .kilogram-input,
+.weight-container .imperial-weight-container .stone-input,
+.weight-container .imperial-weight-container .pound-input {
+  border: 0.01rem solid var(--c-gray);
+  padding: 0.8rem;
+  border-radius: 1rem;
+  outline: none;
+  font-size: 1.5rem;
+  width: 16rem;
+  color: var(--c-gray);
+}
+
+.calculator .height-weight-input-container .height-container,
+.calculator .height-weight-input-container .weight-container {
+  margin-bottom: 1rem;
+}
+
+.height-weight-input-container .height-container .metric-height-container,
+.height-weight-input-container .weight-container .metric-weight-container,
+.height-container .imperial-height-container .height-ft-container,
+.height-container .imperial-height-container .height-in-container,
+.weight-container .imperial-weight-container .weight-st-container,
+.weight-container .imperial-weight-container .weight-lbs-container {
+  position: relative;
+  margin-right: 1rem;
+}
+
+.height-weight-input-container .height-container .height-label,
+.height-weight-input-container .weight-container .weight-label {
+  display: block;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--c-gray);
+}
+
+.height-container .metric-height-container .unit-cm,
+.weight-container .metric-weight-container .unit-kg,
+.imperial-height-container .height-ft-container .unit-ft,
+.imperial-height-container .height-in-container .unit-in,
+.imperial-weight-container .weight-st-container .unit-st,
+.imperial-weight-container .weight-lbs-container .unit-lbs {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.5rem;
+  color: var(--c-l-blue);
+  font-weight: var(--h-semi);
+  font-size: var(--h-m);
+}
+
+.header .calculator .header-result {
+  border-radius: 0.5rem 5rem 5rem 0.5rem;
+  background-color: var(--c-l-blue);
+  padding: 2rem;
+  width: 85%;
+}
+
+.calculator .header-result .welcome-message {
+  display: flex;
+  flex-direction: column;
+  color: var(--c-white);
+  width: 85%;
+}
+
+.header-result .welcome-message .welcome-title {
+  font-size: var(--h-m);
+  font-weight: var(--h-semi);
+}
+
+.header-result .welcome-message .welcome-description {
+  margin-top: 1rem;
+  font-size: var(--b-s);
+  font-weight: var(--b-reg);
+}
+
+.calculator .header-result .bmi-message {
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  color: var(--c-white);
+}
+
+.header-result .bmi-message .bmi-infos {
+  width: 40%;
+}
+
+.bmi-message .bmi-infos .bmi-result {
+  font-size: var(--b-m);
+  font-weight: var(--b-semi);
+}
+
+.bmi-message .bmi-infos .bmi-total {
+  font-size: var(--h-xl);
+  font-weight: var(--h-semi);
+}
+
+.header-result .bmi-message .bmi-description {
+  width: 100%;
+  margin-left: 1rem;
+  font-size: var(--b-s);
+}
+
+.bmi-message .bmi-description .bmi-bold {
+  font-weight: var(--b-semi);
+}
+/** Calculator **/
+
+/** Heros  **/
+
+.container .heros {
+  margin-left: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  padding: 3rem 3rem;
+}
+
+.container .heros .hero-image {
+  margin-top: 3rem;
+  width: 35.25rem;
+  height: 33.313rem;
+}
+
+.heros .hero-infos .curved-line-left-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.container .heros .hero-title {
+  font-size: var(--h-l);
+  font-weight: var(--h-semi);
+  line-height: var(--h-l-h);
+  width: 60%;
+  margin-bottom: 3rem;
+}
+
+.container .heros .hero-description {
+  font-size: var(--b-m);
+  font-weight: var(--b-reg);
+  color: var(--c-gray);
+  width: 65%;
+}
+
+/** Heros  **/
+
+/** Healthy Lifestyle Section **/
+
+.container .healthy-lifestyle-container {
+  margin-left: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  padding: 3rem;
+  display: flex;
+  justify-content: space-between;
+  background-image: linear-gradient(
+    290deg,
+    rgba(214, 230, 254, 0.3) 0%,
+    rgba(214, 252, 254, 0) 100%
+  );
+}
+
+.container .healthy-lifestyle-container .health-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.healthy-lifestyle-container .health-card .health-card__icon {
+  max-width: 4rem;
+  max-height: 4rem;
+  margin-bottom: 2.5rem;
+}
+
+.healthy-lifestyle-container .health-card .health-card__title {
+  font-size: var(--h-m);
+  color: var(--c-d-blue);
+  margin-bottom: 1.5rem;
+}
+
+.healthy-lifestyle-container .health-card .health-card__description {
+  color: var(--c-gray);
+  width: 75%;
+}
+
+/** Healthy Lifestyle Section **/
+
+/** Footer **/
+.container .footer {
+  margin-left: 2rem;
+  margin-top: 2rem;
+  padding: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container .footer .bmi-limitations-container {
+  width: 39%;
+  margin-right: 10rem;
+}
+
+.footer .bmi-limitations-container .footer-title {
+  margin-bottom: 1rem;
+  font-size: var(--h-l);
+  color: var(--c-d-blue);
+}
+
+.footer .bmi-limitations-container .footer-description {
+  width: 100%;
+  font-size: var(--b-m);
+  color: var(--c-gray);
+}
+
+.container .footer .bmi-card {
+  display: flex;
+  flex-direction: column;
+  width: 28%;
+  box-shadow: 16px 32px 56px 0px rgba(143, 174, 207, 0.25);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  margin-right: 2rem;
+  border-radius: 1rem;
+}
+
+.container .footer .bmi-card.pregnancy-card {
+  margin-left: 10rem;
+}
+
+.footer .bmi-card .bmi-card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.bmi-card .bmi-card-header .bmi-card__icon {
+  margin-right: 1.5rem;
+}
+
+.bmi-card .bmi-card-header .bmi-card__title {
+  font-size: var(--h-s);
+  font-weight: var(--h-semi);
+  color: var(--c-d-blue);
+}
+
+.footer .bmi-card .bmi-card__description {
+  font-size: var(--b-m);
+  font-weight: var(--b-reg);
+  color: var(--c-gray);
+}
+
+.container .footer .curved-line-right-container {
+  width: 20%;
+  margin-left: 7rem;
+  margin-top: 2rem;
+}
+
+/** Footer **/
+
+/** Tablet **/
+
+/** Header **/
+
+@media (max-width: 64rem) {
+  .container .header {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    margin-inline: auto;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container .header .header-bg {
+    width: 100vw;
+    height: 50rem;
+    border-radius: 0 0 3rem 3rem;
+  }
+
+  .container .header .header-infos {
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .header .header-infos .header-logo,
+  .header .header-infos .header-title,
+  .header .header-description {
+    margin-inline: auto;
+  }
+
+  .container .header .calculator {
+    width: 100%;
+  }
+
+  .header .calculator .calculator-header {
+    align-self: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  .calculator .radio-btn-container .metric-label {
+    margin-right: 30vw;
+  }
+
+  .height-container .metric-height-container .centimeter-input,
+  .height-container .imperial-height-container .feet-input,
+  .height-container .imperial-height-container .inch-input,
+  .weight-container .metric-weight-container .kilogram-input,
+  .weight-container .imperial-weight-container .stone-input,
+  .weight-container .imperial-weight-container .pound-input {
+    width: 38vw;
+  }
+
+  .header-result .bmi-message .bmi-description {
+    width: 100%;
+  }
+
+  .container .heros {
+    padding: 0;
+    gap: 2rem;
+    margin-inline: 1rem;
+  }
+
+  .container .heros .hero-image {
+    margin-left: -6rem;
+    width: 80%;
+    height: 25.693rem;
+  }
+
+  .container .heros .hero-infos {
+    margin-top: 7rem;
+    width: 90%;
+  }
+
+  .heros .hero-infos .curved-line-left-container {
+    display: none;
+  }
+
+  .container .heros .hero-title {
+    margin-bottom: 3rem;
+    width: 80%;
+  }
+
+  .container .heros .hero-description {
+    line-height: var(--b-l-h);
+  }
+
+  .container .healthy-lifestyle-container {
+    margin-top: 5rem;
+    flex-direction: column;
+  }
+
+  .healthy-lifestyle-container .health-card .health-card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .health-card .health-card-content .health-card__icon {
+    margin-right: 2rem;
+  }
+
+  .health-card-content .health-card-infos .health-card__title {
+    font-size: var(--h-m);
+    color: var(--c-d-blue);
+    margin-top: -3rem;
+    margin-bottom: 0;
+  }
+
+  .health-card-content .health-card-infos .health-card__description {
+    font-size: var(--b-m);
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+
+  .container .footer {
+    margin-top: 0;
+    text-align: center;
+    align-items: center;
+    width: 90vw;
+  }
+
+  .container .footer .bmi-limitations-container {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 3rem;
+  }
+
+  .container .footer .curved-line-right-container {
+    display: none;
+  }
+
+  .container .footer .bmi-card {
+    text-align: left;
+    margin-inline: auto;
+    width: 45%;
+    height: 15rem;
+  }
+
+  .container .footer .bmi-card.pregnancy-card {
+    margin-left: 2rem;
+  }
+}
+
+@media (max-width: 48rem) {
+  .header .header-infos .header-title {
+    width: 100%;
+    font-size: 2rem;
+  }
+
+  .header .header-infos .header-description {
+    width: 100%;
+  }
+
+  .container .header .calculator {
+    width: 100vw;
+  }
+
+  .header .calculator .height-weight-input-container {
+    flex-direction: column;
+  }
+
+  .height-container .metric-height-container .centimeter-input,
+  .weight-container .metric-weight-container .kilogram-input {
+    width: 100%;
+  }
+
+  .header .calculator .header-result {
+    flex-direction: column;
+    border-radius: 1rem;
+    width: 100%;
+  }
+
+  .calculator .header-result .bmi-message {
+    flex-direction: column;
+  }
+
+  .container .heros {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .container .heros .hero-image {
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+
+  .container .heros .hero-infos {
+    margin-top: 0;
+    padding: 1rem;
+    color: var(--c-d-blue);
+  }
+
+  .container .heros .hero-title {
+    margin-top: 0;
+    width: 100%;
+    font-size: 2rem;
+  }
+
+  .container .heros .hero-description {
+    width: 100%;
+  }
+
+  .container .healthy-lifestyle-container {
+    padding: 1rem;
+    margin: 5rem 1rem;
+  }
+
+  .container .healthy-lifestyle-container .health-card {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .healthy-lifestyle-container .health-card .health-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .health-card .health-card-content .health-card__icon {
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+  }
+
+  .container .footer {
+    text-align: center;
+    margin-inline: 1rem;
+    align-items: self-start;
+    margin: 5rem 0 0 0 0;
+    padding: 1rem;
+    width: 90%;
+  }
+
+  .container .footer .bmi-card {
+    width: 100%;
+    margin: 0;
+    height: auto;
+    margin-top: 1rem;
+  }
+
+  .footer .bmi-card .bmi-card-header {
+    margin-top: 3rem;
+  }
+
+  .container .footer .bmi-card.pregnancy-card {
+    margin-inline: auto;
+    padding: 1rem;
+  }
+}
